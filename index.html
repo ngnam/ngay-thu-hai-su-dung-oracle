@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic HTML Meta Tags -->
+    <title>Ngày thứ 2 làm việc với Oracle</title>
+    <meta name="description" content="Ngày thứ 2 làm việc với Oracle">
+    <meta name="keywords" content="ngay-thu-hai-su-dung-oracle" />
+    <meta name="subject" content="Ngày thứ 2 làm việc với Oracle">
+    <meta name="copyright" content="Nguyen Van Nam">
+    <meta name="language" content="vi">
+    <meta name="robots" content="index,follow" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <!-- OpenGraph Meta Tags -->
+    <meta name="og:title" content="Ngày thứ 2 làm việc với Oracle" />
+    <meta name="og:type" content="article" />
+    <meta name="og:url" content="https://ngnam.github.io/ngay-thu-hai-su-dung-oracle" />
+    <meta name="og:image"
+        content="https://ngnam.github.io/ngay-thu-hai-su-dung-oracle/ngay-thu-hai-su-dung-oracle.jpg" />
+    <meta name="og:site_name" content="ngay-thu-hai-su-dung-oracle" />
+    <meta name="og:description" content="Ngày thứ 2 làm việc với Oracle" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container mb-1">
+        <div class="row">
+            <h1 class="text-center"># Ngày thứ <strong>02</strong> làm việc với Oracle</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row content">
+
+            <p>Tiếp tục chuỗi seri 100 ngày cho việc làm chủ csdl oracle. Thường thì khi làm trong 1 dự án bạn sẽ có rất
+                ít thời gian để tìm hiểu chi tiết từng section đã chỉ ra ở phần 1: <a
+                    href="https://ngnam.github.io/ngay-thu-nhat-lam-quen-voi-oracle">Làm quen với oracle</a>.</p>
+
+            <p>Bằng những kinh nghiệm với SQL server, làm sao thể lấy dữ liệu, tìm kiếm dữ liệu với các điều kiện logic,
+                phân trang dữ liệu, ràng buộc và các liên kết với các bảng dữ liệu,... chúng ta sẽ bắt tay
+                vào làm việc với thử thách đầu tiên là thử viết 1 PL/SQL package, bên trong PL/SQL package đơn giản là
+                nó bao gồm các thủ tục, các function nhỏ. Một package CRUD cơ bản bao gồm các nhiệm vụ sau: thêm, sửa,
+                xóa, Get 1 dữ liệu, Get nhiều dữ liệu, get dữ liệu theo điều kiện ABCD, phân trang dữ liệu,...</p>
+
+            <p>Nói lại 1 chút về khái niệm, Trong PL/SQL, 1 package là một schema objects chứa hoặc định nghĩa cho một
+                nhóm các chức năng nhất định. Một package bao gồm các variables, constants, cursors, exceptions,
+                procedures, functions, và một số chương trình nhỏ. Nó được biên dịch (complied) và lưu trữ (stored)
+                trong cơ sở dữ liệu Oracle. Thông thường một package thường có 2 phần là specification và phần body. Bạn
+                có thể hình dung giống như Reponsitory pattern khi bạn khai báo 1 interface và sau đó là bạn
+                implementations cho interface đó.</p>
+
+            <p>Có thể xem hình sau cho dễ hiểu nhé: <img src="/imgs/Screenshot_1.png" alt="illustrates PL/SQL packages"
+                    height="200"></p>
+
+            <p>
+                - Phần specification: Phần này chỉ rõ ra những function bạn sẽ định nghĩa trong package.
+                - Phần Body hay còn gọi là phần thân, phần này bạn sẽ implements đầy đủ các function trong package.
+            </p>
+
+            <p>
+                Ví dụ về phần thân của 1 function là CREATE, thông thường sẽ bao gồm 3, hoặc 4 phần:
+            <ol>
+                <li>Phần khởi tạo các biến truyền vào.</li>
+                <li>Phần định nghĩa các biến toàn cục</li>
+                <li>Phần thực thi - hay chính là các câu lệnh truy vấn sql như select, insert, update, các biểu thức
+                    điều kiện</li>
+                <li>Phần xử lý cho exceptions</li>
+            </ol>
+            </p>
+
+            <p>Sau khi khai báo xong 1 package, bạn sẽ tự suy nghĩ trong đầu là làm sao để sử dụng nó, muốn sử dụng nó
+                thì bạn phải lưu lại package vào trong oracle db. Bạn lưu lại package bằng cách biên dịch nó. THường bạn
+                sẽ biên dịch phần specification trước sau đó đến phần body. Trong quá trình complied code có thể nó sẽ
+                có 1 vài lỗi, bạn chịu khó đọc mô tả và làm theo là được. Phần này để bạn tự thực hành để hiểu hơn.</p>
+
+            <p>Đó là cơ bản những gì về 1 package trong oracle db. Ngoài ra bạn muốn tìm hiểu sâu hơn về các lý do tại
+                sao lại cần đên package <a href="https://www.oracletutorial.com/plsql-tutorial/plsql-package/">tại
+                    đây</a>.</p>
+
+            <p>Nói đến đây sẽ có 1 vài phần bạn chưa hình dung ra, Mình sẽ đi vào chi tiết từng phần ở những bài tiếp theo.</p>
+
+            <p>Nội dung bài tiếp theo mình sẽ nói về thằng <a href="https://ngnam.github.io/ngay-thu-ba-tim-hieu-ve-pl-sql-cursors"><strong>PL/SQL CURSORS</strong></a>. Rất mong nhận được ủng hộ.</p>
+        </div>
+    </div>
+
+    <div class="zoom-page">
+        <span title="Thu nhỏ" id="zoom-in">A--</span>
+        <span title="Phóng to" id="zoom-out">A++</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
